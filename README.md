@@ -1,4 +1,6 @@
 # Colourful Flashlights
+A simple Lethal Company mod.
+
 Change the colour of your flashlight via the terminal in the company ship! See the commands below.
 
 Select from some built-in colours, or provide 3 of your own via the config.
@@ -21,6 +23,3 @@ Use `cflist` to view this in-game on the terminal.
 | cfcustom1 | Config value 1 |
 | cfcustom2 | Config value 2 |
 | cfcustom3 | Config value 3 |
-
-## Misc
-If you want a rainbow flashlight instead, check out this mod: [FancyFlashies](https://thunderstore.io/c/lethal-company/p/Asylud/FancyFlashies/) (Not compatitible with ColourfulFlashlights)
