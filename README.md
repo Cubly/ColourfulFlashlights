@@ -1,5 +1,6 @@
 # Colourful Flashlights
 A simple Lethal Company mod.
+[Find it here on Thunderstore.](https://thunderstore.io/c/lethal-company/p/cubly/ColourfulFlashlights/)
 
 Change the colour of your flashlight via the terminal in the company ship! See the commands below.
 
