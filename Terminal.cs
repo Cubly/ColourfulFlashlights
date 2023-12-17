@@ -26,7 +26,9 @@ namespace ColourfulFlashlights
         {
             if (e.SubmittedText == "cf")
             {
-                e.ReturnedNode.displayText = $"Colourful Flashlights | Version {Plugin.MOD_VERSION}\nBy cubly\n\nPlease use 'cf list' for commands!\n\n";
+                e.ReturnedNode.displayText = $"Colourful Flashlights | Version {Plugin.MOD_VERSION}\nBy cubly" +
+                    $"\n\nChange your flashlight to shine whatever colour you like!" +
+                    $"\n\nType 'cf list' for a list of commands!\n\n";
                 return;
             }
 
@@ -37,7 +39,8 @@ namespace ColourfulFlashlights
                 {
                     if (split[2] == null)
                     {
-                        e.ReturnedNode.displayText = $"ERROR! Please provide a valid hexadecimal colour code!\nCommand usage: cf hex <code>\nExample: cf hex #ffcc00\n";
+                        e.ReturnedNode.displayText = $"[Colourful Flashlights]\n" +
+                            $"ERROR! Please provide a valid hexadecimal colour code!\nCommand usage: cf hex <code>\nExample: cf hex #ffcc00\n";
                         return;
                     }
                     string hexCode = split[2];
@@ -48,7 +51,8 @@ namespace ColourfulFlashlights
                     }
                     else
                     {
-                        e.ReturnedNode.displayText = $"ERROR! Please provide a valid hexadecimal colour code!\nCommand usage: cf hex <code>\nExample: cf hex #ffcc00\n";
+                        e.ReturnedNode.displayText = $"[Colourful Flashlights]\nERROR! Please provide a valid hexadecimal colour code!" +
+                            $"\nCommand usage: cf hex <code>\nExample: cf hex #ffcc00\n";
                         return;
                     }
                 }
@@ -69,17 +73,20 @@ namespace ColourfulFlashlights
                                 UpdateActiveColour(StringToColor(Plugin.ConfigHex3.Value), e.ReturnedNode);
                                 return;
                             default:
-                                e.ReturnedNode.displayText = $"ERROR! Please enter only values: 1, 2 or 3!\n\nCommand usage: cf custom <value>\n\nExample: cf custom 1\n\n";
+                                e.ReturnedNode.displayText = $"[Colourful Flashlights]\nERROR! Please enter only values: 1, 2 or 3!" +
+                                    $"\n\nCommand usage: cf custom <value>\n\nExample: cf custom 1\n\n";
                                 return;
                         }
                     }
-                    e.ReturnedNode.displayText = $"ERROR! Please enter only values: 1, 2 or 3!\n\nCommand usage: cf custom <value>\n\nExample: cf custom 1\n\n";
+                    e.ReturnedNode.displayText = $"Colourful Flashlights | Version {Plugin.MOD_VERSION}\nBy cubly" +
+                    $"\n\nChange your flashlight to shine whatever colour you like!" +
+                    $"\n\nType 'cf list' for a list of commands!\n\n";
                     return;
                 }
 
                 if (split[1] == "list")
                 {
-                    e.ReturnedNode.displayText = $"{cmdList}\n\n";
+                    e.ReturnedNode.displayText = $"[Colourful Flashlights]\n{cmdList}\n\n";
                     return;
                 }
 
@@ -93,7 +100,7 @@ namespace ColourfulFlashlights
                     }
                     else
                     {
-                        e.ReturnedNode.displayText = $"ERROR! Please provide a valid colour or option from the list below!\n{cmdList}\n\n";
+                        e.ReturnedNode.displayText = $"[Colourful Flashlights]\nERROR! Please provide a valid colour or option from the list below!\n{cmdList}\n\n";
                         return;
                     }
                 }
@@ -129,7 +136,7 @@ namespace ColourfulFlashlights
 
         private static void UpdateActiveColour(Color color, TerminalNode e)
         {
-            e.displayText = "SUCCESS! Flashlight colour updated!\n\nToggle your flashlight for your new colour!\n\n";
+            e.displayText = "[Colourful Flashlights]\nSUCCESS! Flashlight colour updated!\n\nToggle your flashlight for your new colour!\n\n";
             Plugin.activeColour = color;
             WriteCFValue(color);
             if (Plugin.ConfigSyncOthers.Value)

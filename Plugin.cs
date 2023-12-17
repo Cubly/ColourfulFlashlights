@@ -15,7 +15,7 @@ namespace ColourfulFlashlights
     {
         private const string MOD_NAME = "ColourfulFlashlights";
         private const string MOD_GUID = "Cubly.ColourfulFlashlights";
-        public const string MOD_VERSION = "2.0.0";
+        public const string MOD_VERSION = "2.2.0";
 
         private readonly Harmony harmony = new Harmony(MOD_GUID);
         public static Plugin Instance;
@@ -30,6 +30,7 @@ namespace ColourfulFlashlights
 
         public static Dictionary<int, string> playerData = new Dictionary<int, string>();
         public static int currentPlayerId;
+        public static bool firstFlashlight = true;
         public static Color activeColour = Color.white;
 
         void Awake()

@@ -27,6 +27,11 @@ namespace ColourfulFlashlights
                     if (pId == Plugin.currentPlayerId)
                     {
                         colour = Plugin.activeColour;
+                        if (Plugin.firstFlashlight)
+                        {
+                            if (Plugin.activeColour == Color.white) HUDManager.Instance.DisplayTip("Change flashlight colour!", "Type 'cf' into the ship terminal for guidance!");
+                            Plugin.firstFlashlight = false;
+                        }
                     }
                     
                     __instance.flashlightBulb.color = colour;
