@@ -135,7 +135,7 @@ The first colour in the array is 100% health and the second is 0% health. For he
     {
         name: "example3",
         mode: 3,
-        colours: ["#3FF707", "#005CFF", "#FF0000", #FF7C4B]
+        colours: ["#3FF707", "#005CFF", "#FF0000", "#FF7C4B"]
     },
 ]
 
