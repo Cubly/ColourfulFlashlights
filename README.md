@@ -33,7 +33,6 @@ Type `cf` into the terminal to get started!
 | cf disco <speed>   |      Flicks between some colours. Speed is an integer 1-20      |    cf disco 8     |
 | cf random          | Toggling your flashlight off/on picks a random colour each time |
 | cf preset <name>   |          Load a preset you defined in UserPresets.json          | cf preset example |
-| cf undo            |      Reverts the effect/colour to the previously used one       |
 | cf help            |                       View the help page                        |
 | cf                 |                        View the mod page                        |
 
@@ -50,6 +49,8 @@ The format is an array of objects defining a name, mode, speed and an array of h
 `speed` is an integer 1-20, with 1 being the slowest and 20 the fastest
 
 `colours` is an array of strings, which must be hexadecimal colour codes, e.g. [#FF00BB, #CC5500]
+
+To load a preset in game, use `cf preset <name>` in the terminal.
 
 ### Modes
 
@@ -146,6 +147,8 @@ The first colour in the array is 100% health and the second is 0% health. For he
 "example2" is a fixed colour so only the first colour in the array will be used.
 
 "example3" will choose a random colour from the colours array each time the flashlight is toggled.
+
+To load a preset in game, use `cf preset <name>` in the terminal. For example: `cf preset example1`
 
 ## Configuration
 
