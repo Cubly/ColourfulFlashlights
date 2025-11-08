@@ -27,12 +27,12 @@ Select from some built-in colours, use any hexadecimal colour code or define pre
 | cf orange          |                             Orange                              |
 | cf purple          |                             Purple                              |
 | cf \<code>         |                      Use a hex colour code                      |    cf #FF22BB     |
-| cf rainbow <speed> |        A smooth rainbow effect. Speed is an integer 1-20        |   cf rainbow 10   |
-| cf disco <speed>   |      Flicks between some colours. Speed is an integer 1-20      |    cf disco 8     |
+| cf rainbow \<speed> |        A smooth rainbow effect. Speed is an integer 1-20        |   cf rainbow 10   |
+| cf disco \<speed>   |      Flicks between some colours. Speed is an integer 1-20      |    cf disco 8     |
 | cf random          | Toggling your flashlight off/on picks a random colour each time |
-| cf preset <name>   |          Load a preset you defined in UserPresets.json          | cf preset example |
-| cf speed <integer> |    Adjust the speed of an effect, providing an integer 1-20     |    cf speed 5     |
-| cf save <name>     |         Save your current flashlight state as a preset          |   cf save frog    |
+| cf preset \<name>   |          Load a preset you defined in UserPresets.json          | cf preset example |
+| cf speed \<integer> |    Adjust the speed of an effect, providing an integer 1-20     |    cf speed 5     |
+| cf save \<name>     |         Save your current flashlight state as a preset          |   cf save frog    |
 | cf help            |                       View the help page                        |
 | cf                 |                        View the mod page                        |
 
