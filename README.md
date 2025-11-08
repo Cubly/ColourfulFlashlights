@@ -4,7 +4,7 @@ A [Lethal Company](https://store.steampowered.com/app/1966720/Lethal_Company/) m
 
 View the Thunderstore page [here](https://thunderstore.io/c/lethal-company/p/cubly/ColourfulFlashlights/).
 
-I recommend [r2modman](https://github.com/ebkr/r2modmanPlus) as a mod manager.
+I recommend [r2modman](https://github.com/ebkr/r2modmanPlus) as a mod manager. Avoid Overwolf (Thunderstore Mod Manager).
 
 I self-host git, so this repository exists only as a place to receive issues and feedback. 
 
