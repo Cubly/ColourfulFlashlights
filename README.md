@@ -14,8 +14,6 @@ Change the colour (color) of your flashlight via the terminal in the company shi
 
 Select from some built-in colours, use any hexadecimal colour code or define presets in a configuration file!
 
-Type `cf` into the terminal to get started!
-
 ## Terminal options
 
 | Command            |                         Colour/Function                         |      Example      |
@@ -33,24 +31,28 @@ Type `cf` into the terminal to get started!
 | cf disco <speed>   |      Flicks between some colours. Speed is an integer 1-20      |    cf disco 8     |
 | cf random          | Toggling your flashlight off/on picks a random colour each time |
 | cf preset <name>   |          Load a preset you defined in UserPresets.json          | cf preset example |
+| cf speed <integer> |    Adjust the speed of an effect, providing an integer 1-20     |    cf speed 5     |
+| cf save <name>     |         Save your current flashlight state as a preset          |   cf save frog    |
 | cf help            |                       View the help page                        |
 | cf                 |                        View the mod page                        |
 
 ## Presets
 
-You can create presets in \<PathToBepInExFolder>/config/ColourfulFlashlights/UserPresets.json
+You can create presets in `BepInEx/config/ColourfulFlashlights/UserPresets.json`
 
 The format is an array of objects defining a name, mode, speed and an array of hexadecimal colours.
 
-`name` is a string that must be unique from other preset names
+`name` is a string that must be unique from other preset names, case-insensitive.
 
 `mode` is an integer (see table below for options)
 
 `speed` is an integer 1-20, with 1 being the slowest and 20 the fastest
 
-`colours` is an array of strings, which must be hexadecimal colour codes, e.g. [#FF00BB, #CC5500]
+`colours` is an array of strings, which must be hexadecimal colour codes, e.g. ["#FF00BB", "#CC5500"]
 
 To load a preset in game, use `cf preset <name>` in the terminal.
+
+You can save the current state of your flashlight with the `cf save <name>` command. If you provide a name of an existing preset, it will be overridden. Preset names are case-insensitive.
 
 ### Modes
 
@@ -152,7 +154,7 @@ To load a preset in game, use `cf preset <name>` in the terminal. For example: `
 
 ## Configuration
 
-There are 3 configuration options, found in <PathToBepInExFolder>/config/ColourfulFlashlights/Config.cfg
+There are 3 configuration options, found in `BepInEx/config/ColourfulFlashlights/Config.cfg`
 
 | Option              |    Type    |                                                                                        Details                                                                                        |
 | ------------------- | :--------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
