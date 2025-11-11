@@ -10,59 +10,63 @@ I self-host git, so this repository exists only as a place to receive issues and
 
 ---
 
-Change the colour (color) of your flashlight via the terminal in the company ship! Syncs with other players!
+Change the colour (color) of your flashlight via the terminal in the company ship! Multiplayer compatible, syncs with other players!
 
-Select from some built-in colours, use any hexadecimal colour code or define presets in a configuration file!
+Select from some built-in colours or effects, use any hexadecimal colour code or define presets in a configuration file!
 
 ## Terminal options
 
-| Command            |                         Colour/Function                         |      Example      |
-| ------------------ | :-------------------------------------------------------------: | :---------------: |
-| cf white           |                      White (Game default)                       |
-| cf blue            |                              Blue                               |
-| cf red             |                               Red                               |
-| cf green           |                              Green                              |
-| cf yellow          |                             Yellow                              |
-| cf pink            |                              Pink                               |
-| cf orange          |                             Orange                              |
-| cf purple          |                             Purple                              |
-| cf \<code>         |                      Use a hex colour code                      |    cf #FF22BB     |
+| Command             |                         Colour/Function                         |      Example      |
+| ------------------- | :-------------------------------------------------------------: | :---------------: |
+| cf white            |                      White (Game default)                       |
+| cf blue             |                              Blue                               |
+| cf red              |                               Red                               |
+| cf green            |                              Green                              |
+| cf yellow           |                             Yellow                              |
+| cf pink             |                              Pink                               |
+| cf orange           |                             Orange                              |
+| cf purple           |                             Purple                              |
+| cf \<code>          |                      Use a hex colour code                      |    cf #FF22BB     |
 | cf rainbow \<speed> |        A smooth rainbow effect. Speed is an integer 1-20        |   cf rainbow 10   |
 | cf disco \<speed>   |      Flicks between some colours. Speed is an integer 1-20      |    cf disco 8     |
-| cf random          | Toggling your flashlight off/on picks a random colour each time |
+| cf random           | Toggling your flashlight off/on picks a random colour each time |
+| cf health           | White when 100% health and transitions to red as health lowers  |
 | cf preset \<name>   |          Load a preset you defined in UserPresets.json          | cf preset example |
 | cf speed \<integer> |    Adjust the speed of an effect, providing an integer 1-20     |    cf speed 5     |
 | cf save \<name>     |         Save your current flashlight state as a preset          |   cf save frog    |
-| cf help            |                       View the help page                        |
-| cf                 |                        View the mod page                        |
+| cf state            |          View details on your current flashlight state          |
+| cf help             |                       View the help page                        |
+| cf                  |                        View the mod page                        |
 
 ## Presets
 
 You can create presets in `BepInEx/config/ColourfulFlashlights/UserPresets.json`
 
+_Note: You do not need to restart the game for your changes to be loaded._
+
 The format is an array of objects defining a name, mode, speed and an array of hexadecimal colours.
 
-`name` is a string that must be unique from other preset names, case-insensitive.
+`name` is a string that must be unique from other preset names, case-insensitive, max 15 characters long.
 
-`mode` is an integer (see table below for options)
+`mode` is an integer (see table below for options).
 
-`speed` is an integer 1-20, with 1 being the slowest and 20 the fastest
+`speed` is an integer 1-20, with 1 being the slowest and 20 the fastest. Can be omitted for modes that don't require it.
 
 `colours` is an array of strings, which must be hexadecimal colour codes, e.g. ["#FF00BB", "#CC5500"]
 
 To load a preset in game, use `cf preset <name>` in the terminal.
 
-You can save the current state of your flashlight with the `cf save <name>` command. If you provide a name of an existing preset, it will be overridden. Preset names are case-insensitive.
+You can save the current state of your flashlight with the `cf save <name>` command. If you provide a name of an existing preset, that preset will be overwritten. Preset names are case-insensitive and limited to 15 characters in length.
 
 ### Modes
 
-| Mode Integer |  Mode Name   |                               Details                               |
-| ------------ | :----------: | :-----------------------------------------------------------------: |
-| 0            |    Fixed     |                           A fixed colour                            |
-| 1            |    Cycle     |                   Cycles (flicks) through colours                   |
-| 2            | Smooth Cycle |            Smoothly cycles (transitions) through colours            |
-| 3            |    Random    |   Randomly chooses a new colour when the flashlight is turned on    |
-| 4            |    Health    | Changes smoothly from one colour to another based on player health. |
+| Mode Integer |  Mode Name   |                              Details                               |
+| ------------ | :----------: | :----------------------------------------------------------------: |
+| 0            |    Fixed     |                           A fixed colour                           |
+| 1            |    Cycle     |                  Cycles (flicks) through colours                   |
+| 2            | Smooth Cycle |           Smoothly cycles (transitions) through colours            |
+| 3            |    Random    |   Randomly chooses a new colour when the flashlight is turned on   |
+| 4            |    Health    | Changes smoothly from one colour to another based on player health |
 
 #### Fixed Mode
 
@@ -117,7 +121,7 @@ If no colours are provided, then a random colour will be generated each time (be
 
 In health mode, the flashlight will update based on it's holder's current health.
 
-The first colour in the array is 100% health and the second is 0% health. For health values between 100% and 0%, the colour will be interpolated. In this example, starting with a blue colour and getting more red the more damage the holder takes.
+The first colour in the array is 100% health and the second is 10% health. For health values between 100% and 10%, the colour will be interpolated. In this example, starting with a blue colour and getting more red the more damage the holder takes.
 
 ### Full UserPresets.json Example
 
